@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StringResourcePractice1</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- TODO: 実習1: ここから下に、日本語の String リソースを作る -->
+    <string name="kato">kato</string>
+    <string name="tea">tea</string>
+    <string name="ohayou">good morning</string>
+    <string name="thanks">thank you</string>
+    <string name="bye">goodbye</string>
+    <string name="apple">apple</string>
+
+    <plurals name="my_apple">
+        <item quantity="one">I have an apple.</item>
+        <item quantity="other">I have many apples.</item>
+    </plurals>
+
+</resources>

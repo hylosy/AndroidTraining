@@ -4,7 +4,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面上部に揃える -->
+ 
+        
     <!-- 1. プロフィール画像(ic_launcher)と、それを囲う四角形の枠、その下に プロフィール と書かれた文字 -->
+    	<ImageView
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:src="@drawable/ic_launcher" 
+    	    />
+    	    
     <!-- 2. 1. の右側の上半分に、ニックネームの表示と、そのさらに右端に設定アイコン -->
     <!-- 3. 1. の右側の下半分に、電話ボタン、メール送信ボタン、共有ボタンの 3 つを均等割付 -->
     <!-- 4. 2. と 3. の間に分割線 -->
@@ -15,6 +23,7 @@
     <!-- Hint: 4. 均等割付するボタンの画像は、左から android:src="@android:drawable/ic_menu_call", android:src="@android:drawable/ic_menu_send", android:src="@android:drawable/ic_menu_share" です -->
     <!-- TODO: 上記のまとまりの下に、幅 1 dp の区切り線を引く -->
 
+	
 
     <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面下部に揃える -->
     <!-- 1. ic_launcher のアイコンと、その下に メニュー の文字を表示し、アイコンの右肩に 30 と書かれたバッチを表示するボタン -->

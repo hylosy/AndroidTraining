@@ -5,6 +5,14 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <!-- TODO: 実習1: ここから下に、日本語の String リソースを作る -->
+    <string name="kato">加藤</string>
+    <string name="tea">お茶</string>
+    <string name="ohayou">おはようございます</string>
+    <string name="thanks">ありがとう</string>
+    <string name="bye">さようなら</string>
+    <string name="apple">りんご</string>
+    
     <!-- TODO: 実習2: 日本語の String リソースに対応する英語リソースを作る -->
-
+    <string name="my_format">私は、%1$d個のりんごを持っています。</string>
+    <string name="my_format_2">私は、%1$d個のりんごと、%2$d個のにんじんを持っています。</string>
 </resources>

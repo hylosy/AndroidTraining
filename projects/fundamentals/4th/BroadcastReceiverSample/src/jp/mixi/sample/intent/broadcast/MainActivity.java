@@ -12,7 +12,7 @@ import android.view.View;
 
 public class MainActivity extends Activity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    // 独自に定義した、Intent の Action
+    // 迢ｬ閾ｪ縺ｫ螳夂ｾｩ縺励◆縲！ntent 縺ｮ Action
     public static final String ACTION_HOGEHOGE = "jp.mixi.sample.android.intent.action.HOGEHOGE";
 
     private BroadcastReceiver mMyReceiver = new MyDynamicBroadcastReceiver();
@@ -29,10 +29,10 @@ public class MainActivity extends Activity {
     protected void onStart() {
         super.onStart();
 
-        // この Activity の Context に BroadacstReceiver のインスタンスを動的に登録する
+        // 縺薙� Activity 縺ｮ Context 縺ｫ BroadacstReceiver 縺ｮ繧､繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧貞虚逧�↓逋ｻ骭ｲ縺吶ｋ
         registerReceiver(mMyReceiver, new IntentFilter(Intent.ACTION_HEADSET_PLUG));
 
-        // この Activity を持つ Application の Context に BroadcastReceiver のインスタンスを動的に登録する
+        // 縺薙� Activity 繧呈戟縺､ Application 縺ｮ Context 縺ｫ BroadcastReceiver 縺ｮ繧､繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧貞虚逧�↓逋ｻ骭ｲ縺吶ｋ
         getApplicationContext().registerReceiver(mMyReceiver2, new IntentFilter(Intent.ACTION_HEADSET_PLUG));
 
         registerReceiver(mMyReceiver3, new IntentFilter(ACTION_HOGEHOGE));
@@ -42,21 +42,20 @@ public class MainActivity extends Activity {
     protected void onStop() {
         super.onStop();
 
-        // この Activity の Context に登録した BroadcastReceiver のインスタンスを解除する
-        // これを行わないと、Activity が死んだあとも BroadcastReceiver が生きたままになり、メモリリークとなるが、システムがリークを検知して強制解除する
+        // 縺薙� Activity 縺ｮ Context 縺ｫ逋ｻ骭ｲ縺励◆ BroadcastReceiver 縺ｮ繧､繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧定ｧ｣髯､縺吶ｋ
+        // 縺薙ｌ繧定｡後ｏ縺ｪ縺�→縲、ctivity 縺梧ｭｻ繧薙□縺ゅ→繧�BroadcastReceiver 縺檎函縺阪◆縺ｾ縺ｾ縺ｫ縺ｪ繧翫�繝｡繝｢繝ｪ繝ｪ繝ｼ繧ｯ縺ｨ縺ｪ繧九′縲√す繧ｹ繝�Β縺後Μ繝ｼ繧ｯ繧呈､懃衍縺励※蠑ｷ蛻ｶ隗｣髯､縺吶ｋ
         unregisterReceiver(mMyReceiver);
 
-        // この Activity を持つ Application の Context に登録した BroadcastReceiver のインスタンスを解除する
-        // これを行わないと、Activity が死んだあとも BroadcastReceiver が生きたままになり、メモリリークとなる
-        // システムは自動で登録を解除しないので、適切なタイミングで確実に解除することを要求される
+        // 縺薙� Activity 繧呈戟縺､ Application 縺ｮ Context 縺ｫ逋ｻ骭ｲ縺励◆ BroadcastReceiver 縺ｮ繧､繝ｳ繧ｹ繧ｿ繝ｳ繧ｹ繧定ｧ｣髯､縺吶ｋ
+        // 縺薙ｌ繧定｡後ｏ縺ｪ縺�→縲、ctivity 縺梧ｭｻ繧薙□縺ゅ→繧�BroadcastReceiver 縺檎函縺阪◆縺ｾ縺ｾ縺ｫ縺ｪ繧翫�繝｡繝｢繝ｪ繝ｪ繝ｼ繧ｯ縺ｨ縺ｪ繧�        // 繧ｷ繧ｹ繝�Β縺ｯ閾ｪ蜍輔〒逋ｻ骭ｲ繧定ｧ｣髯､縺励↑縺��縺ｧ縲�←蛻�↑繧ｿ繧､繝溘Φ繧ｰ縺ｧ遒ｺ螳溘↓隗｣髯､縺吶ｋ縺薙→繧定ｦ∵ｱゅ＆繧後ｋ
         getApplicationContext().unregisterReceiver(mMyReceiver2);
 
         unregisterReceiver(mMyReceiver3);
     }
 
     public void onClick(View v) {
-        // Intent のブロードキャスト
-        Intent intent = new Intent();
+        // Intent 縺ｮ繝悶Ο繝ｼ繝峨く繝｣繧ｹ繝�        
+    	Intent intent = new Intent();
         intent.setAction(ACTION_HOGEHOGE);
         sendBroadcast(intent);
     }

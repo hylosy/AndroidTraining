@@ -1,42 +1,45 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity" >
 
-    <!-- このLinearLayoutをRelativeLayoutに変更して同じレイアウトを実現してください -->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#ffc356"
         android:orientation="horizontal"
         android:padding="4dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="4dp"
-            android:background="#ffffff"
-            android:src="@drawable/ic_launcher" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical" >
-
+ 
+		    <ImageView
+			    android:id="@+id/image"
+   		        android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+           		android:layout_marginRight="4dp"
+         		android:background="#ffffff"
+            	android:src="@drawable/ic_launcher" />
+        
             <TextView
+                android:id="@+id/uppertext"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ff9630" />
-
+                android:layout_height="wrap_content"
+                android:background="#ff9630" 
+                android:layout_toRightOf="@+id/image"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                />
+        
+            
+            
             <TextView
+                android:id="@+id/lowertext"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#ffedc6" />
-        </LinearLayout>
-    </LinearLayout>
-
+                android:layout_height="wrap_content"
+                android:background="#ffedc6"
+                android:layout_above="@+id/uppertext" 
+                android:layout_toRightOf="@+id/image"
+                android:layout_alignBottom="@+id/image"
+                android:layout_alignParentRight="true"/>
+ 	</RelativeLayout>
+    
 </FrameLayout>

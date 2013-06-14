@@ -1,5 +1,11 @@
 package jp.mixi.practice.network.networkpractice1;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,10 +13,12 @@ import android.os.StrictMode;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
+	private TextView textview = null;	
 
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
 
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
@@ -27,6 +35,10 @@ public class MainActivity extends Activity {
 
             public void onClick(View v) {
                 // http getの処理を書く
+            	// 非同期処理の開始
+            	textview = (TextView)findViewById(R.id.responce);
+                 new MyAsyncTask(textview).execute();
+                
             }
         });
         View buttonPost = findViewById(R.id.buttonPost);
@@ -34,6 +46,8 @@ public class MainActivity extends Activity {
 
             public void onClick(View v) {
                 // http postの処理を書く
+            	
+        //    	new MyPostAsyncTask(getApplicationContext(textview)).execute();
             }
         });
     }

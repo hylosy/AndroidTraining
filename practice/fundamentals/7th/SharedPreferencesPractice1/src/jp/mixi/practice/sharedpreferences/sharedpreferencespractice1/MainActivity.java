@@ -17,7 +17,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // privatePreferencesに値が存在すればその値を表示をしてください。
-
+        if(mPrivatePreferences != null){
+        	
+        }
+     // SharedPrefernces の取得  
+       // mPrivatePreference = getSharedPreferences(PREF_KEY, Activity.MODE_PRIVATE);  
         // privatePreferencesにString,int,boolean,long,floatで何らかの値を保存してください。
 
         Button clearButton = (Button) findViewById(R.id.clear);

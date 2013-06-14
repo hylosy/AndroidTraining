@@ -8,10 +8,13 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
+import android.widget.AdapterView.OnItemClickListener;
 import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
@@ -34,12 +37,17 @@ public class MainActivity extends Activity {
 
         // TODO:BookArrayAdapterを作成して下さい。
         // (リストアイテムのレイアウトは用意されているlist_item_book.xmlをしてください。)
-        // BookArrayAdapter bookArrayAdapter = new BookArrayAdapter(mActivity,
-        // list);
+        
+        BookArrayAdapter bookArrayAdapter = new BookArrayAdapter(mActivity,list);
         mListView = (ListView) findViewById(R.id.BookList);
-
         // TODO:ListViewにBookArrayAdapterをセットしてください。
         // TODO:ListViewをタップしたとき、BookActivityに遷移するようにしてください。遷移するときにBookクラスのtitleを渡してください。
+        mListView.setOnItemClickListener(new OnItemSelectedListener() {
+        	public void OnItemClick(Book book){
+        		  BookActivity bookactivity = new BookActivity();
+        		  setContentView(R.layout.activity_main);
+        	}
+        });
         // (BookActivityは用意されているものを使用してください)
     }
 
